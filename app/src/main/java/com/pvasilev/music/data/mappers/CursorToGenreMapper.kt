@@ -4,8 +4,9 @@ import android.database.Cursor
 import android.provider.BaseColumns
 import android.provider.MediaStore
 import com.pvasilev.music.data.models.Genre
+import javax.inject.Inject
 
-class CursorToGenreMapper : Mapper<Cursor, Genre> {
+class CursorToGenreMapper @Inject constructor(): Mapper<Cursor, Genre> {
     override fun map(cursor: Cursor): Genre {
         return Genre(
             cursor.getLong(cursor.getColumnIndex(BaseColumns._ID)),

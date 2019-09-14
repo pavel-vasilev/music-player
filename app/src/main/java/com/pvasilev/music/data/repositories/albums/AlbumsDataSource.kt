@@ -6,6 +6,7 @@ import android.provider.MediaStore.Audio.AlbumColumns.ALBUM_ID
 import android.provider.MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI
 import com.pvasilev.music.data.mappers.Mapper
 import com.pvasilev.music.data.models.Album
+import javax.inject.Inject
 
 interface AlbumsDataSource {
     fun getAlbums(): List<Album>
@@ -13,7 +14,7 @@ interface AlbumsDataSource {
     fun getAlbum(albumId: Long): Album?
 }
 
-class AlbumsDataSourceImpl constructor(
+class AlbumsDataSourceImpl @Inject constructor(
     private val contentResolver: ContentResolver,
     private val mapper: Mapper<Cursor, List<Album>>
 ) : AlbumsDataSource {

@@ -3,8 +3,9 @@ package com.pvasilev.music.data.mappers
 import android.support.v4.media.MediaBrowserCompat.MediaItem
 import android.support.v4.media.MediaDescriptionCompat
 import com.pvasilev.music.data.models.Album
+import javax.inject.Inject
 
-class AlbumToMediaItemMapper : Mapper<Album, MediaItem> {
+class AlbumToMediaItemMapper @Inject constructor(): Mapper<Album, MediaItem> {
     override fun map(album: Album): MediaItem {
         return MediaItem(
             MediaDescriptionCompat.Builder()

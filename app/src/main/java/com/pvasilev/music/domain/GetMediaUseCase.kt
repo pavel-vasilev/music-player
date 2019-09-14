@@ -6,6 +6,7 @@ import com.pvasilev.music.domain.GetMediaUseCase.Companion.ALBUM_MEDIA_ID
 import com.pvasilev.music.domain.GetMediaUseCase.Companion.GENRES_MEDIA_ID
 import com.pvasilev.music.domain.GetMediaUseCase.Companion.GENRE_MEDIA_ID
 import com.pvasilev.music.domain.GetMediaUseCase.Companion.ROOT_MEDIA_ID
+import javax.inject.Inject
 
 interface GetMediaUseCase {
     companion object {
@@ -19,7 +20,7 @@ interface GetMediaUseCase {
     operator fun invoke(parentId: String): List<MediaItem>
 }
 
-class GetMediaUseCaseImpl(
+class GetMediaUseCaseImpl @Inject constructor(
     private val getRootMedia: GetRootMediaUseCase,
     private val getGenresMedia: GetGenresMediaUseCase,
     private val getAlbumsMedia: GetAlbumsMediaUseCase,

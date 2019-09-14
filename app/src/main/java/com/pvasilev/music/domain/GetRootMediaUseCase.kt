@@ -4,12 +4,13 @@ import android.content.Context
 import android.support.v4.media.MediaBrowserCompat.MediaItem
 import android.support.v4.media.MediaDescriptionCompat
 import com.pvasilev.music.R
+import javax.inject.Inject
 
 interface GetRootMediaUseCase {
     operator fun invoke(): List<MediaItem>
 }
 
-class GetRootMediaUseCaseImpl(private val context: Context) : GetRootMediaUseCase {
+class GetRootMediaUseCaseImpl @Inject constructor(private val context: Context) : GetRootMediaUseCase {
     override fun invoke(): List<MediaItem> {
         return listOf(
             MediaItem(

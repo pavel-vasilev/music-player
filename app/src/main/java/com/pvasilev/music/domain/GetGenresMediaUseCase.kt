@@ -4,12 +4,13 @@ import android.support.v4.media.MediaBrowserCompat.MediaItem
 import com.pvasilev.music.data.mappers.Mapper
 import com.pvasilev.music.data.models.Genre
 import com.pvasilev.music.data.repositories.genres.GenresDataSource
+import javax.inject.Inject
 
 interface GetGenresMediaUseCase {
     operator fun invoke(): List<MediaItem>
 }
 
-class GetGenresMediaUseCaseImpl(
+class GetGenresMediaUseCaseImpl @Inject constructor(
     private val dataSource: GenresDataSource,
     private val mapper: Mapper<Genre, MediaItem>
 ) : GetGenresMediaUseCase {
