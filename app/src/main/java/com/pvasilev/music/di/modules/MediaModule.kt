@@ -24,18 +24,6 @@ import dagger.Provides
 class MediaModule {
     @Provides
     @ServiceScoped
-    fun provideMediaSession(context: Context): MediaSessionCompat {
-        return MediaSessionCompat(context, "MediaSession")
-    }
-
-    @Provides
-    @ServiceScoped
-    fun provideMediaController(context: Context, mediaSession: MediaSessionCompat): MediaControllerCompat {
-        return MediaControllerCompat(context, mediaSession)
-    }
-
-    @Provides
-    @ServiceScoped
     fun provideMediaSessionConnector(
         mediaSession: MediaSessionCompat,
         queueNavigator: MediaSessionConnector.QueueNavigator,

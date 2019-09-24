@@ -11,7 +11,6 @@ class CursorToSongMapper @Inject constructor(): Mapper<Cursor, Song> {
         return Song(
             cursor.getLong(cursor.getColumnIndex(BaseColumns._ID)),
             cursor.getString(cursor.getColumnIndex(MediaStore.Audio.AudioColumns.TITLE)),
-            cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.AudioColumns.DURATION)),
             cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.AudioColumns.ALBUM_ID))
         )
     }

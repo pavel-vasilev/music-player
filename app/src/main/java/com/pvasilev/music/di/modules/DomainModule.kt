@@ -26,4 +26,10 @@ interface DomainModule {
 
     @Binds
     fun bindGetQueueUseCase(useCase: GetQueueUseCaseImpl): GetQueueUseCase
+
+    @Binds
+    fun bindGetCurrentSongUseCase(useCase: GetCurrentSongUseCaseImpl): GetCurrentSongUseCase
+
+    @Binds
+    fun bindGetPlaybackStateUseCase(useCase: GetPlaybackStateUseCaseImpl): GetPlaybackStateUseCase
 }

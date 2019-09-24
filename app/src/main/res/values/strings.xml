@@ -2,4 +2,7 @@
     <string name="app_name">Music Player</string>
     <string name="title_albums">Albums</string>
     <string name="title_genres">Genres</string>
+    <string name="playback_channel_id" translatable="false">playback_channel</string>
+    <string name="playback_channel_name">Playback</string>
+    <string name="playback_channel_description">Notifications about playback state</string>
 </resources>

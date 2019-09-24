@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ContentDescription">
+
+    <ImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="0dp"
+            android:layout_height="500dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+            android:id="@+id/btn_repeat"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_repeat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_cover"/>
+
+    <ImageButton
+            android:id="@+id/btn_shuffle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_shuffle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_cover"/>
+
+
+    <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.87"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_shuffle"
+            app:layout_constraintStart_toEndOf="@+id/btn_repeat"
+            app:layout_constraintTop_toBottomOf="@+id/iv_cover"
+            tools:text="STARGAZING"/>
+
+    <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:alpha="0.6"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_shuffle"
+            app:layout_constraintStart_toEndOf="@+id/btn_repeat"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="Travis Scott - Astroworld"/>
+
+    <ImageButton
+            android:id="@+id/btn_previous"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_fast_rewind"
+            app:layout_constraintEnd_toStartOf="@+id/btn_play_pause"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="@+id/btn_play_pause"/>
+
+    <ImageButton
+            android:id="@+id/btn_play_pause"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_pause"
+            app:layout_constraintEnd_toStartOf="@+id/btn_next"
+            app:layout_constraintStart_toEndOf="@+id/btn_previous"
+            app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_fast_forward"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title"
+            app:layout_constraintStart_toEndOf="@+id/btn_play_pause"
+            app:layout_constraintTop_toTopOf="@+id/btn_play_pause"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

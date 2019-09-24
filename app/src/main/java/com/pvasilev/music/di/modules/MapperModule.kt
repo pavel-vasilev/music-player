@@ -2,6 +2,7 @@ package com.pvasilev.music.di.modules
 
 import android.database.Cursor
 import android.support.v4.media.MediaBrowserCompat.MediaItem
+import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat.QueueItem
 import com.pvasilev.music.data.mappers.*
 import com.pvasilev.music.data.models.Album
@@ -24,6 +25,9 @@ interface MapperModule {
 
     @Binds
     fun bindMediaItemToQueueItemMapper(mapper: MediaItemToQueueItemMapper): Mapper<MediaItem, QueueItem>
+
+    @Binds
+    fun bindMetadataToSongMapper(mapper: MetadataToSongMapper): Mapper<MediaMetadataCompat, Song>
 
     @Module
     companion object {
