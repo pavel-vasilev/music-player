@@ -7,6 +7,7 @@ import android.provider.MediaStore
 data class Song(
     val id: Long,
     val name: String,
+    val duration: Long,
     val albumId: Long
 ) {
     val uri: Uri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id)

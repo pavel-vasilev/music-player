@@ -10,7 +10,8 @@ class MetadataToSongMapper @Inject constructor() : Mapper<MediaMetadataCompat, S
         val description = metadata.description
         val id = ContentUris.parseId(description.mediaUri)
         val name = description.title.toString()
+        val duration = metadata.getLong(MediaMetadataCompat.METADATA_KEY_DURATION)
         val albumId = ContentUris.parseId(description.iconUri)
-        return Song(id, name, albumId)
+        return Song(id, name, duration, albumId)
     }
 }

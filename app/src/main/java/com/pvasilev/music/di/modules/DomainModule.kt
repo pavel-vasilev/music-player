@@ -32,4 +32,7 @@ interface DomainModule {
 
     @Binds
     fun bindGetPlaybackStateUseCase(useCase: GetPlaybackStateUseCaseImpl): GetPlaybackStateUseCase
+
+    @Binds
+    fun bindGetAlbumDetailsUseCase(useCase: GetAlbumDetailsUseCaseImpl): GetAlbumDetailsUseCase
 }
